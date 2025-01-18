@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            background: url('hyperion.logo.png') no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+            color: white;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 20px 0 10px;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: #333;
+            position: fixed;
+            width: 60px;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            transition: width 0.3s;
+            overflow: hidden;
+        }
+
+        nav:hover {
+            width: 200px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            text-align: left;
+            font-size: 1em;
+            width: 100%;
+            transition: transform 0.2s, font-size 0.2s;
+        }
+
+        nav:hover a {
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            transform: scale(1.1);
+        }
+
+        main {
+            margin-left: 70px;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 5px 0;
+            background-color: #333;
+            color: white;
+            position: relative;
+            width: calc(100% - 70px);
+            margin-top: 30px;
+            left: 70px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+   <header>
+        <h1>Hyperion</h1>
+    </header>
+
+    <nav>
+        <a href="#quienes-somos">Quiénes Somos</a>
+        <a href="#producto">Nuestro Producto</a>
+        <a href="#objetivos">Nuestros Objetivos</a>
+        <a href="#opciones-compra">Opciones de Compra</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <main>
+        <section id="introduccion">
+            <h2>Bienvenidos a Hyperion</h2>
+            <p>En Hyperion trabajamos para revolucionar la gestión de emergencias y la extinción de incendios forestales. Nuestro compromiso con la innovación nos ha llevado a desarrollar soluciones tecnológicas que optimizan la coordinación de los equipos de emergencia y minimizan los efectos devastadores de los incendios.</p>
+            <p>Utilizamos drones de última generación capaces de recopilar y analizar datos en tiempo real, proporcionando información crucial para una respuesta eficiente. Nuestra tecnología no solo mejora la seguridad y la eficacia de los equipos de emergencia, sino que también contribuye a la preservación del medio ambiente y la prevención de desastres futuros.</p>
+            <p>Hyperion nace de la pasión por proteger vidas, reducir el impacto ambiental y aprovechar el potencial de la tecnología aeroespacial para marcar la diferencia. ¡Descubre cómo nuestras soluciones pueden transformar la manera en que enfrentamos los desafíos del fuego!</p>
+        </section>
+
+        <section id="quienes-somos">
+            <h2>Quiénes Somos</h2>
+            <p>Somos un equipo dedicado a la innovación en la gestión de emergencias y extinción de incendios. Nuestro equipo está compuesto por:</p>
+            <ul>
+                <li>Javier Blanco</li>
+                <li>Aitana del Canto</li>
+                <li>Daniel Fernández</li>
+                <li>Adela González</li>
+                <li>Sara González</li>
+            </ul>
+        </section>
+
+        <section id="producto">
+            <h2>Nuestro Producto</h2>
+            <p>En Hyperion desarrollamos drones avanzados diseñados específicamente para la extinción de incendios forestales. Nuestros drones son económicos, flexibles y reutilizables, ofreciendo un tiempo de respuesta mínimo y una gran autonomía. Con capacidades de monitoreo en tiempo real, nuestros drones recopilan datos críticos para coordinar equipos de emergencia y prevenir riesgos futuros.</p>
+        </section>
+
+        <section id="objetivos">
+            <h2>Nuestros Objetivos</h2>
+            <p>En Hyperion nos esforzamos por marcar la diferencia en la gestión de emergencias, priorizando la seguridad, la sostenibilidad y la innovación tecnológica. Nuestros objetivos son claros:</p>
+            <ul>
+                <li><strong>Proteger vidas humanas:</strong> Reducir riesgos para los equipos de emergencia y las comunidades afectadas.</li>
+                <li><strong>Preservar el medio ambiente:</strong> Minimizar el impacto de los incendios forestales mediante una acción rápida y eficiente.</li>
+                <li><strong>Innovar continuamente:</strong> Implementar tecnologías avanzadas que optimicen los recursos y mejoren la toma de decisiones.</li>
+                <li><strong>Crear soluciones accesibles:</strong> Ofrecer productos económicos y de alto rendimiento adaptados a las necesidades del mercado.</li>
+            </ul>
+            <p>Estas metas nos guían para cumplir con nuestra misión de transformar la respuesta a emergencias en todo el mundo.</p>
+        </section>
+
+        <section id="opciones-compra">
+            <h2>Opciones de Compra</h2>
+            <p>En Hyperion nos adaptamos a las necesidades de nuestros clientes, ofreciendo flexibilidad y soluciones personalizadas. Nuestro objetivo es garantizar la satisfacción de los usuarios mediante diversas opciones:</p>
+            <ul>
+                <li><strong>Alquiler temporal:</strong> Disponemos de planes con y sin mantenimiento proporcionado por nuestro equipo experto.</li>
+                <li><strong>Compra directa:</strong> Ofrecemos la posibilidad de adquirir nuestros drones con todas las garantías y soporte técnico.</li>
+            </ul>
+            <p>Estas opciones permiten a nuestros clientes elegir la solución que mejor se adapte a sus posibilidades y requisitos específicos.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¿Quieres saber más sobre cómo podemos ayudarte? Solicita una demostración de nuestro producto.</p>
+            <button onclick="alert('Gracias por tu interés. Nos pondremos en contacto contigo pronto.')">Pedir Demostración</button>
+            <p>También puedes contactarnos en:</p>
+            <p>Teléfono: +34 600 123 456</p>
+            <p>Email: contacto@hyperion.com</p>
+            <p>Dirección: Calle Ficticia, 123, León, España</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hyperion. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
