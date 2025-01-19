@@ -5,6 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hyperion</title>
     <style>
+
+
+/* Declaración de la fuente personalizada */
+@font-face {
+    font-family: 'MokotoDemo';
+    src: url('./Mokoto Demo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Aplicar la fuente a los títulos y la barra */
+h1, h2, nav a {
+    font-family: 'MokotoDemo', Arial, sans-serif;
+}
+
+
+
+
+
+
+#videoModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoModal > div {
+    width: 80%;
+    max-width: 800px;
+    background: #4C1F1F;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+#videoModal button {
+    margin-top: 10px;
+    background-color: #FFD700;
+    color: #4C1F1F;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+
+
+
         /* Declaración de la fuente personalizada */
         @font-face {
             font-family: 'MokotoDemo';
@@ -18,179 +75,288 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #4C1F1F; /* Marrón oscuro */
+            color: #f4f4f4;
         }
 
-        /* Estilo del encabezado */
+        /* Encabezado con logo */
         header {
-            text-align: center;
-            background: url('./fotodrones2.avif') no-repeat center center;
+            position: relative;
+            height: 300px;
+            background: url('hyperion.logo.png') no-repeat center center;
             background-size: cover;
-            padding: 60px 20px;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Oscurece el logo para mayor legibilidad */
+            z-index: 1;
+        }
+
+        header h1, header p {
+            position: relative;
+            z-index: 2;
             color: white;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
         }
 
         header h1 {
             font-family: 'MokotoDemo', Arial, sans-serif;
-            font-size: 4em;
+            font-size: 2.5em;
             margin: 0;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            padding-top: 100px;
         }
 
         header p {
-            font-size: 1.5em;
-            margin: 20px 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            font-size: 1.2em;
+            margin: 10px 0;
         }
 
-        /* Barra lateral */
+        /* Barra superior */
         nav {
-            background-color: #333;
-            position: fixed;
-            width: 80px;
-            height: 100vh;
-            top: 0;
-            left: 0;
+            background-color: #854B3A; /* Marrón claro */
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-top: 20px;
-            transition: width 0.3s;
-            overflow: hidden;
-            font-family: 'MokotoDemo', Arial, sans-serif;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        nav:hover {
-            width: 220px;
+        nav img {
+            height: 40px; /* Logo en la barra de navegación */
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            width: 100%;
-            transition: transform 0.2s, font-size 0.2s;
-        }
-
-        nav:hover a {
+            margin: 0 15px;
             font-size: 1.2em;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            transform: scale(1.1);
-            color: #f4f4f4;
+            color: #FFD700; /* Dorado */
         }
 
-        /* Secciones principales */
+        /* Secciones */
         section {
-            padding: 60px 20px;
+            padding: 40px 20px;
             text-align: center;
+            background-color: #4C1F1F; /* Marrón oscuro */
+            color: white;
         }
 
-        section h2 {
-            font-family: 'MokotoDemo', Arial, sans-serif;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #333;
+        section:nth-child(even) {
+            background-color: #854B3A; /* Marrón claro */
         }
 
-        section p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
+        /* Secciones con imágenes de fondo */
         .image-section {
+            position: relative;
+            text-align: center;
+            padding: 100px 20px;
+            color: white;
+        }
+
+        .image-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Oscurece la imagen para mejorar la legibilidad */
+            z-index: 1;
+        }
+
+        .image-section h2, .image-section p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .image-section.background1 {
             background: url('./fotodrones.jpg') no-repeat center center;
             background-size: cover;
-            color: white;
-            padding: 100px 20px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
 
-        .image-section p {
-            font-size: 1.5em;
+        .image-section.background2 {
+            background: url('./fotodrones2.avif') no-repeat center center;
+            background-size: cover;
         }
 
-        .video-container {
-            margin: 40px auto;
-            text-align: center;
+        /* Opciones de compra */
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        .video-container video {
-            width: 80%;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        ul li {
+            margin: 10px 0;
         }
 
-        /* Footer */
+        /* Botón */
+        button {
+            background-color: #FFD700; /* Dorado */
+            color: #4C1F1F; /* Marrón oscuro */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffcc00; /* Más brillante */
+        }
+
+        /* Pie de página */
         footer {
-            background-color: #333;
+            background-color: #854B3A; /* Marrón claro */
             color: white;
             text-align: center;
             padding: 20px 0;
-            margin-top: 20px;
         }
 
-        footer p {
-            margin: 0;
+        footer img {
+            height: 80px; /* Tamaño original del logo */
+            display: block;
+            margin: 10px auto;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Hyperion</h1>
-        <p>Innovación en gestión de emergencias e incendios forestales</p>
+        <p>Conectamos equipos, protegemos el futuro</p>
     </header>
 
     <nav>
-        <a href="#quienes-somos">Quiénes Somos</a>
-        <a href="#producto">Nuestro Producto</a>
-        <a href="#tecnologia">Tecnología</a>
-        <a href="#contacto">Contacto</a>
+        <img src="hyperion.logo.png" alt="Logo Hyperion">
+        <div>
+            <a href="#introduccion">Inicio</a>
+            <a href="#quienes-somos">Quiénes Somos</a>
+            <a href="#producto">Nuestro Producto</a>
+            <a href="#objetivos">Nuestros Objetivos</a>
+            <a href="#opciones-compra">Opciones de Compra</a>
+            <a href="#contacto">Contacto</a>
+        </div>
     </nav>
 
     <main>
+        <section id="introduccion">
+            <h2>Bienvenidos a Hyperion</h2>
+            <p>En Hyperion trabajamos para revolucionar la gestión de emergencias y la extinción de incendios forestales. Nuestro compromiso con la innovación nos ha llevado a desarrollar soluciones tecnológicas que optimizan la coordinación de los equipos de emergencia y minimizan los efectos devastadores de los incendios.</p>
+            <p>Utilizamos drones de última generación capaces de recopilar y analizar datos en tiempo real, proporcionando información crucial para una respuesta eficiente. Nuestra tecnología no solo mejora la seguridad y la eficacia de los equipos de emergencia, sino que también contribuye a la preservación del medio ambiente y la prevención de desastres futuros.</p>
+        </section>
+
         <section id="quienes-somos">
             <h2>Quiénes Somos</h2>
-            <p>En Hyperion, somos un equipo apasionado por transformar la gestión de emergencias e incendios. Combinamos tecnología de vanguardia con compromiso ambiental para proteger vidas y preservar el planeta.</p>
+            <p>Somos un equipo dedicado a la innovación en la gestión de emergencias y extinción de incendios. Nuestro equipo está compuesto por:</p>
+            <ul>
+                <li>Javier Blanco</li>
+                <li>Aitana del Canto</li>
+                <li>Daniel Fernández</li>
+                <li>Adela González</li>
+                <li>Sara González</li>
+            </ul>
         </section>
 
-        <section id="producto" class="image-section">
-            <h2>Nuestro Producto</h2>
-            <p>Nuestros drones avanzados están diseñados para operar en condiciones extremas, proporcionando datos en tiempo real que optimizan las operaciones de emergencia y previenen desastres futuros.</p>
+
+
+
+        <section id="producto">
+    <h2>Nuestro Producto</h2>
+    <p>En Hyperion desarrollamos drones avanzados diseñados específicamente para la extinción de incendios forestales.</p>
+    <button id="openModalButton">Ver Video</button>
+</section>
+
+<!-- Modal ventana emergente -->
+<div id="videoModal">
+    <div>
+        <video id="videoPlayer" width="100%" controls>
+            <source src="./video.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+        <button id="closeModalButton">Cerrar</button>
+    </div>
+</div>
+
+
+
+
+
+        <section id="objetivos" class="image-section background2">
+            <h2>Nuestros Objetivos</h2>
+            <p>En Hyperion nos esforzamos por marcar la diferencia en la gestión de emergencias, priorizando la seguridad, la sostenibilidad y la innovación tecnológica. Nuestros objetivos son claros:</p>
+            <ul>
+                <li><strong>Proteger vidas humanas:</strong> Reducir riesgos para los equipos de emergencia y las comunidades afectadas.</li>
+                <li><strong>Preservar el medio ambiente:</strong> Minimizar el impacto de los incendios forestales mediante una acción rápida y eficiente.</li>
+                <li><strong>Innovar continuamente:</strong> Implementar tecnologías avanzadas que optimicen los recursos y mejoren la toma de decisiones.</li>
+                <li><strong>Crear soluciones accesibles:</strong> Ofrecer productos económicos y de alto rendimiento adaptados a las necesidades del mercado.</li>
+            </ul>
         </section>
 
-        <section id="tecnologia">
-            <h2>Tecnología</h2>
-            <div class="video-container">
-                <video controls>
-                    <source src="./video.mp4" type="video/mp4">
-                    Tu navegador no soporta videos.
-                </video>
-                <p>Nuestra tecnología combina inteligencia artificial y análisis de datos en tiempo real para ofrecer soluciones rápidas y precisas, minimizando riesgos y maximizando resultados.</p>
-            </div>
+        <section id="opciones-compra">
+            <h2>Opciones de Compra</h2>
+            <p>En Hyperion nos adaptamos a las necesidades de nuestros clientes, ofreciendo flexibilidad y soluciones personalizadas:</p>
+            <ul>
+                <li><strong>Alquiler temporal:</strong> Disponemos de planes con y sin mantenimiento proporcionado por nuestro equipo experto.</li>
+                <li><strong>Compra directa:</strong> Ofrecemos la posibilidad de adquirir nuestros drones con todas las garantías y soporte técnico.</li>
+            </ul>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <p>¿Quieres saber más? Contáctanos:</p>
-            <p>Email: contacto@hyperion.com</p>
+            <p>¿Quieres saber más sobre cómo podemos ayudarte? Solicita una demostración de nuestro producto.</p>
+            <button onclick="alert('Gracias por tu interés. Nos pondremos en contacto contigo pronto.')">Pedir Demostración</button>
             <p>Teléfono: +34 600 123 456</p>
+            <p>Email: contacto@hyperion.com</p>
             <p>Dirección: Calle Ficticia, 123, León, España</p>
         </section>
     </main>
 
     <footer>
+        <img src="hyperion.logo.png" alt="Logo Hyperion">
         <p>&copy; 2025 Hyperion. Todos los derechos reservados.</p>
     </footer>
+
+<script>
+    // Esperar a que el DOM esté completamente cargado
+    document.addEventListener("DOMContentLoaded", function () {
+        // Referencias a los elementos
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('videoPlayer');
+        const openModalButton = document.getElementById('openModalButton');
+        const closeModalButton = document.getElementById('closeModalButton');
+
+        // Función para mostrar el modal
+        function mostrarVideo() {
+            modal.style.display = 'flex';
+            video.play();
+        }
+
+        // Función para cerrar el modal
+        function cerrarVideo() {
+            modal.style.display = 'none';
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        // Asociar eventos a los botones
+        openModalButton.addEventListener('click', mostrarVideo);
+        closeModalButton.addEventListener('click', cerrarVideo);
+    });
+</script>
+
+
+
 </body>
 </html>
