@@ -22,34 +22,60 @@
             color: #333;
         }
 
-        /* Estilo para la barra lateral */
+        /* Estilo del encabezado */
+        header {
+            text-align: center;
+            background: url('./fotodrones2.avif') no-repeat center center;
+            background-size: cover;
+            padding: 60px 20px;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-family: 'MokotoDemo', Arial, sans-serif;
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Barra lateral */
         nav {
             background-color: #333;
             position: fixed;
-            width: 80px; /* Ancho de la barra lateral */
+            width: 80px;
             height: 100vh;
             top: 0;
-            left: 20px; /* Margen desde el borde izquierdo */
+            left: 0;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             padding-top: 20px;
-            padding-left: 10px;
             transition: width 0.3s;
             overflow: hidden;
-            font-family: 'MokotoDemo', Arial, sans-serif; /* Aplicar la fuente personalizada */
+            font-family: 'MokotoDemo', Arial, sans-serif;
         }
 
         nav:hover {
-            width: 220px; /* Ancho al pasar el cursor */
+            width: 220px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px;
+            padding: 10px 20px;
             font-size: 1em;
-            width: 100%; /* El enlace ocupa todo el ancho */
+            width: 100%;
             transition: transform 0.2s, font-size 0.2s;
         }
 
@@ -59,121 +85,106 @@
 
         nav a:hover {
             transform: scale(1.1);
+            color: #f4f4f4;
         }
 
-        /* Estilo para los títulos */
-        h1, h2 {
-            font-family: 'MokotoDemo', Arial, sans-serif; /* Aplicar la fuente personalizada */
-        }
-
-        /* Estilo del encabezado */
-        header {
+        /* Secciones principales */
+        section {
+            padding: 60px 20px;
             text-align: center;
-            background: url('hyperion.logo.png') no-repeat center center;
-            background-size: cover;
-            padding: 20px;
-            color: white;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
 
-        header h1 {
-            margin: 20px 0 10px;
+        section h2 {
+            font-family: 'MokotoDemo', Arial, sans-serif;
             font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
         }
 
-        /* Estilo para el contenido principal */
-        main {
-            margin-left: 100px; /* Ajusta este valor al ancho total de la barra lateral */
-            padding: 20px;
+        section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
-        /* Estilo del pie de página */
+        .image-section {
+            background: url('./fotodrones.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 100px 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .image-section p {
+            font-size: 1.5em;
+        }
+
+        .video-container {
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .video-container video {
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
         footer {
-            margin-left: 100px; /* Alinea el pie de página con el contenido */
-            width: calc(100% - 100px); /* Ajusta el ancho del pie de página */
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin: 5px 0;
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Hyperion</h1>
+        <p>Innovación en gestión de emergencias e incendios forestales</p>
     </header>
 
     <nav>
         <a href="#quienes-somos">Quiénes Somos</a>
         <a href="#producto">Nuestro Producto</a>
-        <a href="#objetivos">Nuestros Objetivos</a>
-        <a href="#opciones-compra">Opciones de Compra</a>
+        <a href="#tecnologia">Tecnología</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
     <main>
-        <section id="introduccion">
-            <h2>Bienvenidos a Hyperion</h2>
-            <p>En Hyperion trabajamos para revolucionar la gestión de emergencias y la extinción de incendios forestales. Nuestro compromiso con la innovación nos ha llevado a desarrollar soluciones tecnológicas que optimizan la coordinación de los equipos de emergencia y minimizan los efectos devastadores de los incendios.</p>
-            <p>Utilizamos drones de última generación capaces de recopilar y analizar datos en tiempo real, proporcionando información crucial para una respuesta eficiente. Nuestra tecnología no solo mejora la seguridad y la eficacia de los equipos de emergencia, sino que también contribuye a la preservación del medio ambiente y la prevención de desastres futuros.</p>
-            <p>Hyperion nace de la pasión por proteger vidas, reducir el impacto ambiental y aprovechar el potencial de la tecnología aeroespacial para marcar la diferencia. ¡Descubre cómo nuestras soluciones pueden transformar la manera en que enfrentamos los desafíos del fuego!</p>
-        </section>
-
         <section id="quienes-somos">
             <h2>Quiénes Somos</h2>
-            <p>Somos un equipo dedicado a la innovación en la gestión de emergencias y extinción de incendios. Nuestro equipo está compuesto por:</p>
-            <ul>
-                <li>Javier Blanco</li>
-                <li>Aitana del Canto</li>
-                <li>Daniel Fernández</li>
-                <li>Adela González</li>
-                <li>Sara González</li>
-            </ul>
+            <p>En Hyperion, somos un equipo apasionado por transformar la gestión de emergencias e incendios. Combinamos tecnología de vanguardia con compromiso ambiental para proteger vidas y preservar el planeta.</p>
         </section>
 
-        <section id="producto">
+        <section id="producto" class="image-section">
             <h2>Nuestro Producto</h2>
-            <p>En Hyperion desarrollamos drones avanzados diseñados específicamente para la extinción de incendios forestales. Nuestros drones son económicos, flexibles y reutilizables, ofreciendo un tiempo de respuesta mínimo y una gran autonomía. Con capacidades de monitoreo en tiempo real, nuestros drones recopilan datos críticos para coordinar equipos de emergencia y prevenir riesgos futuros.</p>
+            <p>Nuestros drones avanzados están diseñados para operar en condiciones extremas, proporcionando datos en tiempo real que optimizan las operaciones de emergencia y previenen desastres futuros.</p>
         </section>
 
-        <section id="objetivos">
-            <h2>Nuestros Objetivos</h2>
-            <p>En Hyperion nos esforzamos por marcar la diferencia en la gestión de emergencias, priorizando la seguridad, la sostenibilidad y la innovación tecnológica. Nuestros objetivos son claros:</p>
-            <ul>
-                <li><strong>Proteger vidas humanas:</strong> Reducir riesgos para los equipos de emergencia y las comunidades afectadas.</li>
-                <li><strong>Preservar el medio ambiente:</strong> Minimizar el impacto de los incendios forestales mediante una acción rápida y eficiente.</li>
-                <li><strong>Innovar continuamente:</strong> Implementar tecnologías avanzadas que optimicen los recursos y mejoren la toma de decisiones.</li>
-                <li><strong>Crear soluciones accesibles:</strong> Ofrecer productos económicos y de alto rendimiento adaptados a las necesidades del mercado.</li>
-            </ul>
-            <p>Estas metas nos guían para cumplir con nuestra misión de transformar la respuesta a emergencias en todo el mundo.</p>
-        </section>
-
-        <section id="opciones-compra">
-            <h2>Opciones de Compra</h2>
-            <p>En Hyperion nos adaptamos a las necesidades de nuestros clientes, ofreciendo flexibilidad y soluciones personalizadas. Nuestro objetivo es garantizar la satisfacción de los usuarios mediante diversas opciones:</p>
-            <ul>
-                <li><strong>Alquiler temporal:</strong> Disponemos de planes con y sin mantenimiento proporcionado por nuestro equipo experto.</li>
-                <li><strong>Compra directa:</strong> Ofrecemos la posibilidad de adquirir nuestros drones con todas las garantías y soporte técnico.</li>
-            </ul>
-            <p>Estas opciones permiten a nuestros clientes elegir la solución que mejor se adapte a sus posibilidades y requisitos específicos.</p>
+        <section id="tecnologia">
+            <h2>Tecnología</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="./video.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+                <p>Nuestra tecnología combina inteligencia artificial y análisis de datos en tiempo real para ofrecer soluciones rápidas y precisas, minimizando riesgos y maximizando resultados.</p>
+            </div>
         </section>
 
         <section id="contacto">
             <h2>Contacto</h2>
-            <p>¿Quieres saber más sobre cómo podemos ayudarte? Solicita una demostración de nuestro producto.</p>
-            <button onclick="alert('Gracias por tu interés. Nos pondremos en contacto contigo pronto.')">Pedir Demostración</button>
-            <p>También puedes contactarnos en:</p>
-            <p>Teléfono: +34 600 123 456</p>
+            <p>¿Quieres saber más? Contáctanos:</p>
             <p>Email: contacto@hyperion.com</p>
+            <p>Teléfono: +34 600 123 456</p>
             <p>Dirección: Calle Ficticia, 123, León, España</p>
         </section>
     </main>
