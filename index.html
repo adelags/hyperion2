@@ -13,33 +13,16 @@
             font-style: normal;
         }
 
-        /* Aplicar la fuente personalizada */
+        /* Estilo general del cuerpo */
         body {
-            font-family: 'MokotoDemo', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
         }
 
-        header {
-            text-align: center;
-            background: url('hyperion.logo.png') no-repeat center center;
-            background-size: cover;
-            padding: 20px;
-            color: white;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        header h1 {
-            margin: 20px 0 10px;
-            font-size: 2.5em;
-        }
-
+        /* Estilo para la barra lateral */
         nav {
             background-color: #333;
             position: fixed;
@@ -54,6 +37,7 @@
             padding-left: 10px;
             transition: width 0.3s;
             overflow: hidden;
+            font-family: 'MokotoDemo', Arial, sans-serif; /* Aplicar la fuente personalizada */
         }
 
         nav:hover {
@@ -77,11 +61,37 @@
             transform: scale(1.1);
         }
 
+        /* Estilo para los títulos */
+        h1, h2 {
+            font-family: 'MokotoDemo', Arial, sans-serif; /* Aplicar la fuente personalizada */
+        }
+
+        /* Estilo del encabezado */
+        header {
+            text-align: center;
+            background: url('hyperion.logo.png') no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+            color: white;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 20px 0 10px;
+            font-size: 2.5em;
+        }
+
+        /* Estilo para el contenido principal */
         main {
             margin-left: 100px; /* Ajusta este valor al ancho total de la barra lateral */
             padding: 20px;
         }
 
+        /* Estilo del pie de página */
         footer {
             margin-left: 100px; /* Alinea el pie de página con el contenido */
             width: calc(100% - 100px); /* Ajusta el ancho del pie de página */
