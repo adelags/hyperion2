@@ -31,41 +31,24 @@
             font-size: 2.5em;
         }
 
-        nav {
+nav {
     background-color: #333;
     position: fixed;
-    width: 60px;
+    width: 80px; /* Ancho de la barra lateral */
     height: 100vh;
     top: 0;
-    left: 20px; /* Cambié de 0 a 20px para aumentar el margen desde la izquierda */
-    margin: 0;
-    padding: 0;
+    left: 20px; /* Margen desde el borde izquierdo */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     padding-top: 20px;
+    padding-left: 10px;
     transition: width 0.3s;
     overflow: hidden;
 }
 
-nav {
-    background-color: #333; /* Fondo oscuro para toda la barra lateral */
-    position: fixed;
-    width: 80px; /* Aumenté el ancho para evitar que se tapen las letras */
-    height: 100vh;
-    top: 0;
-    left: 20px; /* Margen desde la izquierda */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinea las letras al inicio */
-    padding-top: 20px;
-    padding-left: 10px; /* Espacio adicional dentro de la barra */
-    transition: width 0.3s, left 0.3s; /* Animación para suavizar los cambios */
-    overflow: hidden;
-}
-
 nav:hover {
-    width: 220px; /* Ancho más amplio al pasar el cursor */
+    width: 220px; /* Ancho al pasar el cursor */
 }
 
 nav a {
@@ -73,7 +56,7 @@ nav a {
     text-decoration: none;
     padding: 10px;
     font-size: 1em;
-    width: 100%; /* Para que el fondo ocupe todo el ancho */
+    width: 100%; /* El enlace ocupa todo el ancho */
     transition: transform 0.2s, font-size 0.2s;
 }
 
@@ -82,33 +65,19 @@ nav:hover a {
 }
 
 nav a:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    transform: scale(1.1);
 }
 
+main {
+    margin-left: 100px; /* Ajusta este valor al ancho total de la barra lateral */
+    padding: 20px;
+}
 
-        main {
-            margin-left: 70px;
-            padding: 20px;
-        }
+footer {
+    margin-left: 100px; /* Alinea el pie de página con el contenido */
+    width: calc(100% - 100px); /* Ajusta el ancho del pie de página */
+}
 
-        section {
-            margin-bottom: 30px;
-        }
-
-        section h2 {
-            color: #333;
-        }
-
-        footer {
-            text-align: center;
-            padding: 5px 0;
-            background-color: #333;
-            color: white;
-            position: relative;
-            width: calc(100% - 70px);
-            margin-top: 30px;
-            left: 70px;
-        }
 
         ul {
             list-style-type: none;
